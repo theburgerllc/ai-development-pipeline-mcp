@@ -57,7 +57,8 @@ function checkRateLimit(clientId: string): boolean {
 // Get client identifier for rate limiting
 function getClientId(request: NextRequest): string {
   const forwarded = request.headers.get('x-forwarded-for');
-  const ip = forwarded ? forwarded.split(',')[0] : request.ip || 'unknown';
+  const realIp = request.headers.get('x-real-ip');
+  const ip = forwarded ? forwarded.split(',')[0] : realIp || 'unknown';
   return createHash('sha256').update(ip).digest('hex').substring(0, 16);
 }
 
