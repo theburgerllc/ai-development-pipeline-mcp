@@ -1,26 +1,13 @@
 {
-  "version": 2,
-  "name": "ai-development-pipeline-mcp",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "functions": {
-    "app/api/mcp/route.ts": {
-      "runtime": "@vercel/node"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/mcp",
-      "destination": "/app/api/mcp/route.ts"
-    },
-    {
-      "source": "/api/mcp/(.*)",
       "destination": "/app/api/mcp/route.ts"
     }
   ],
   "headers": [
     {
-      "source": "/api/mcp",
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -36,12 +23,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "regions": ["iad1"],
-  "github": {
-    "silent": true
-  }
+  ]
 }
