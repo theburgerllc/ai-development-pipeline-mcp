@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Development Pipeline MCP Integration</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .status {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .endpoint {
+            background: #f5f5f5;
+            border-radius: 4px;
+            padding: 0.5rem;
+            font-family: monospace;
+            margin: 0.5rem 0;
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .tool {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .tool h3 {
+            margin: 0 0 0.5rem 0;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI Development Pipeline MCP Integration</h1>
+        <p>Model Context Protocol server for Claude AI integration</p>
+    </div>
+
+    <div class="status">
+        <h2>✅ MCP Server Status: Online</h2>
+        <p>The cloud MCP endpoint is running and ready for Claude integration.</p>
+    </div>
+
+    <h2>🔗 Integration Endpoints</h2>
+    <div class="endpoint">
+        <strong>Cloud MCP Endpoint:</strong> /api/mcp
+    </div>
+    <div class="endpoint">
+        <strong>Health Check:</strong> /api/health
+    </div>
+
+    <h2>🛠️ Available MCP Tools</h2>
+    <div class="tools">
+        <div class="tool">
+            <h3>read_project_file</h3>
+            <p>Read files from the workspace</p>
+        </div>
+        <div class="tool">
+            <h3>write_project_file</h3>
+            <p>Write/update files in the workspace</p>
+        </div>
+        <div class="tool">
+            <h3>run_shell_command</h3>
+            <p>Execute shell commands</p>
+        </div>
+        <div class="tool">
+            <h3>check_file_exists</h3>
+            <p>Check if files exist</p>
+        </div>
+        <div class="tool">
+            <h3>list_directory_files</h3>
+            <p>List directory contents</p>
+        </div>
+        <div class="tool">
+            <h3>run_augment_prompt</h3>
+            <p>Send prompts to Augment agent</p>
+        </div>
+        <div class="tool">
+            <h3>run_project_tests</h3>
+            <p>Execute project tests</p>
+        </div>
+    </div>
+
+    <h2>📚 Documentation</h2>
+    <p>For setup instructions and integration guides, visit the 
+       <a href="https://github.com/theburgerllc/ai-development-pipeline-mcp" target="_blank">
+           GitHub repository
+       </a>.
+    </p>
+
+    <h2>🚀 Quick Start</h2>
+    <ol>
+        <li><strong>Local Development:</strong> <code>npx ts-node local-mcp-server.ts</code></li>
+        <li><strong>Claude Desktop:</strong> Add stdio transport configuration</li>
+        <li><strong>Cloud Integration:</strong> Use this Vercel URL as HTTP MCP server</li>
+    </ol>
+
+    <footer style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+        <p>Built with ❤️ for the AI development community</p>
+        <p><a href="https://modelcontextprotocol.io" target="_blank">Learn more about MCP</a></p>
+    </footer>
+</body>
+</html>
