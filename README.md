@@ -128,6 +128,7 @@ Configure these in your Vercel dashboard:
 - `SQUARE_ACCESS_TOKEN`
 - `SQUARE_APPLICATION_ID`
 - `NEXTAUTH_SECRET`
+- `MCP_API_KEY`
 - All other variables from `.env.example`
 
 ### Claude Integration
