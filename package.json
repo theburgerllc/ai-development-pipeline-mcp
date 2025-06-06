@@ -5,13 +5,18 @@
   "main": "local-mcp-server.ts",
   "scripts": {
     "dev": "npx ts-node local-mcp-server.ts",
-    "start": "npx ts-node local-mcp-server.ts",
+    "start": "node dist/local-mcp-server.js",
+    "start:local": "npx ts-node local-mcp-server.ts",
+    "build": "npx tsc",
+    "build:copy-files": "node -e \"const fs=require('fs'); const path=require('path'); if(!fs.existsSync('dist')) fs.mkdirSync('dist'); try{fs.copyFileSync('package.json','dist/package.json')}catch(e){}\"",
+    "build:vercel": "npx tsc --outDir dist --target ES2020 --module CommonJS",
     "cloud-mcp": "vercel dev",
+    "deploy": "vercel deploy --prod",
     "install:global": "npm install -g ts-node nodemon",
     "lint": "npx eslint . --ext .ts",
     "test": "echo 'No tests yet.'",
-    "build": "npx tsc",
-    "type-check": "npx tsc --noEmit"
+    "type-check": "npx tsc --noEmit",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

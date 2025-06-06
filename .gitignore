@@ -148,6 +148,7 @@ augment-prompt.txt
 # Build outputs
 dist/
 build/
+.vercel/
 
 # TypeScript
 *.tsbuildinfo

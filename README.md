@@ -98,17 +98,44 @@ npx ts-node local-mcp-server.ts
 
 ## ☁️ Cloud Deployment (Vercel)
 
-1. **Deploy to Vercel:**
+### Automatic Deployment (Recommended)
+
+1. **Connect to GitHub:**
+   - Go to [Vercel Dashboard](https://vercel.com/dashboard)
+   - Click "New Project" and import your GitHub repository
+   - Vercel will automatically detect the configuration
+
+2. **Manual Deployment:**
 ```bash
 npm install -g vercel
-vercel deploy
+vercel deploy --prod
 ```
 
-2. **Configure environment variables** in the Vercel dashboard
+### Build Configuration
 
-3. **Add to Claude** as an HTTP MCP server:
-   - URL: `https://your-app.vercel.app/api/mcp`
-   - Method: POST
+The project includes a `vercel.json` configuration that handles:
+- TypeScript compilation
+- API route setup
+- CORS headers
+- Output directory configuration
+
+### Environment Variables
+
+Configure these in your Vercel dashboard:
+- `AIRTABLE_API_KEY`
+- `AIRTABLE_BASE_ID`
+- `AIRTABLE_TABLE_NAME`
+- `SQUARE_ACCESS_TOKEN`
+- `SQUARE_APPLICATION_ID`
+- `NEXTAUTH_SECRET`
+- All other variables from `.env.example`
+
+### Claude Integration
+
+Add to Claude as an HTTP MCP server:
+- **URL:** `https://your-app.vercel.app/api/mcp`
+- **Method:** POST
+- **Headers:** `Content-Type: application/json`
 
 ## 🛠️ Available MCP Tools
 
